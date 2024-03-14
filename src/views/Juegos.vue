@@ -1,7 +1,7 @@
 <template>
     <div class="divBotones">
         <button @click="goTo('/memorygame')"> Memory Game </button>
-        <button>Juego</button>
+        <button @click="goTo('/tictactoe')">Tic Tac Toe</button>
         <button>Juego</button>
         <button>Juego</button>
         <button>Juego</button>

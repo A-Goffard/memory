@@ -4,7 +4,7 @@ import Equipo from '../views/Equipo.vue';
 import Juegos from '../views/Juegos.vue';
 import Contacto from '../views/Contacto.vue';
 import MemoryGame from '../views/juegos/MemoryGame.vue';
-
+import TicTacToe from '../views/juegos/TicTacToe.vue';
 
 
 const routes = [
@@ -32,6 +32,11 @@ const routes = [
         path: '/memorygame',
         name: 'MemoryGame',
         component: MemoryGame,
+    },
+    {
+        path: '/tictactoe',
+        name: 'TicTacToe',
+        component: TicTacToe,
     }
 ];
 

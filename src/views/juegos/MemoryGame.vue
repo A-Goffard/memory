@@ -12,8 +12,6 @@
                 <img :src="cards.image">
             </div>
         </div>
-
-
     </div>
   </div>
 </template>
@@ -153,10 +151,7 @@ img {
     display: flex;
     justify-content: center;
 }
-h1 {
-    color: rgb(0, 4, 255);
-    margin: 1rem;
-}
+
 .extras {
     display: flex;
     justify-content: center;

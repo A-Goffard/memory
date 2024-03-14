@@ -26,4 +26,7 @@ export default {
   text-align: center;
   text-decoration: none;
 }
+h1{
+  color: blue;
+}
 </style>

@@ -21,7 +21,9 @@ const goTo = (route) => {
 .nav {
   font-size: xx-large;
   padding: 1rem;
-
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
 }
 .boton{
   color: rgb(255, 255, 255);
