@@ -1,23 +1,28 @@
 <template>
-  <MemoryGame/>
+  <dir>
+    <Nav/>
+    <router-view></router-view>
+  </dir>
 </template>
 
 <script>
-import MemoryGame from './components/MemoryGame.vue';
+import MemoryGame from './views/MemoryGame.vue';
+import Nav from "./components/Nav.vue";
 
 export default {
   name: 'App',
   components: {
+    Nav,
     MemoryGame
   }
 };
 </script>
 
 <style>
-#app {
+*{
+  margin: 0;
+  padding: 0;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
