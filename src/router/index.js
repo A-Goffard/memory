@@ -3,6 +3,9 @@ import Inicio from '../views/Inicio.vue';
 import Equipo from '../views/Equipo.vue';
 import Juegos from '../views/Juegos.vue';
 import Contacto from '../views/Contacto.vue';
+import MemoryGame from '../views/juegos/MemoryGame.vue';
+
+
 
 const routes = [
     {
@@ -25,6 +28,16 @@ const routes = [
         name: 'Contacto',
         component: Contacto,
     },
+    {
+        path: '/memorygame',
+        name: 'MemoryGame',
+        component: MemoryGame,
+    }
 ];
+
+const router = createRouter({
+    history: createWebHistory(),
+    routes,
+  });
 
 export default router;

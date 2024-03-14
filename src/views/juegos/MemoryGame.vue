@@ -1,7 +1,11 @@
 <template>
   <div>
     <h1>Memory Game</h1>
-
+    <div class="extras">
+        <Puntuacion/>
+        <Vidas/>
+        <Intentos/>
+    </div>
     <div class="memory-game">
         <div class="board">
             <div class="card" v-for="(cards, index) in cards" :key="index">
@@ -15,9 +19,16 @@
 </template>
 
 <script>
-
+import Puntuacion from '/src/components/Puntuancion.vue';
+import Vidas from '/src/components/Vidas.vue';
+import Intentos from '/src/components/Intentos.vue';
 
 export default {
+components: {
+    Puntuacion,
+    Vidas,
+    Intentos,
+},
 data() {
     return {
         cards: [
@@ -124,7 +135,7 @@ props: {
 img {
     width: 100%;
     border-radius: 0.5rem;
-    opacity: ;
+    opacity: 0;
 }
 .card {
     width: 10rem;
@@ -145,5 +156,9 @@ img {
 h1 {
     color: rgb(0, 4, 255);
     margin: 1rem;
+}
+.extras {
+    display: flex;
+    justify-content: center;
 }
 </style>

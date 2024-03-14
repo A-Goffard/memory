@@ -6,14 +6,14 @@
 </template>
 
 <script>
-import MemoryGame from './views/MemoryGame.vue';
-import Nav from "./components/Nav.vue";
+import Inicio from './views/Inicio.vue';
+import Nav from './components/Nav.vue';
 
 export default {
   name: 'App',
   components: {
     Nav,
-    MemoryGame
+    Inicio
   }
 };
 </script>
@@ -24,5 +24,6 @@ export default {
   padding: 0;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   text-align: center;
+  text-decoration: none;
 }
 </style>
