@@ -14,7 +14,6 @@
     margin: 1rem;
     border-radius: 0.5rem;
     border: solid 0.15rem blue;
-    padding: 1rem;
     background-color: rgb(234, 234, 255);
     box-shadow: 0rem 0rem 1rem 0.1rem blue;
     transition: 250ms ease;
@@ -26,7 +25,8 @@
 
 img {
   width: 100%;
-  margin: 0.5rem;
+  height: 100%;
+
   border-radius: 0.5rem;
 }
 </style>

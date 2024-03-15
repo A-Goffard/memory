@@ -8,156 +8,89 @@
         </div>
         <div class="memory-game">
             <div class="board">
-                <div class="carta" v-for="carta in cartas" :key="carta.id">
+                <div class="carta" v-for="(carta, index) in cartas" :key="index" @click="seleccionarTarjeta(index)">
                     <CartasPokemon class="cara superior" :carta="carta" />
-                    <CartaTrasera/>
                 </div>
             </div>
+            <button @click="nuevaPartida">Nueva Partida</button>
         </div>
     </div>
 </template>
 
-<script>
+<script setup>
+import { ref } from 'vue'; 
 import Puntuacion from '/src/components/Puntuancion.vue';
 import Vidas from '/src/components/Vidas.vue';
 import Intentos from '/src/components/Intentos.vue';
 import CartasPokemon from '/src/components/CartasPokemon.vue';
-import CartaTrasera from '/src/components/CartaTrasera.vue';
 
-export default {
-    components: {
-        Puntuacion,
-        Vidas,
-        Intentos,
-        CartasPokemon,
-        CartaTrasera,
-    },
-    data() {
-        return {
-            cartas: [
-            {
-                id: 1,
-                title: 'Articuno',
-                image: '/img/pokemon/articuno.png',
-            },
-            {
-                id: 2,
-                title: 'Bulbasaur',
-                image: '/img/pokemon/bulbasaur.png',
-            },
-            {
-                id: 3,
-                title: 'Dragonite',
-                image: '/img/pokemon/dragonite.png',
-            },
-            {
-                id: 4,
-                title: 'Eevee',
-                image: '/img/pokemon/eevee.png',
-            },
-            {
-                id: 5,
-                title: 'Krokorok',
-                image: '/img/pokemon/krokorok.png',
-            },
-            {
-                id: 6,
-                title: 'Lapras',
-                image: '/img/pokemon/lapras.png',
-            },
-            {
-                id: 7,
-                title: 'Marill',
-                image: '/img/pokemon/marill.png',
-            },
-            {
-                id: 8,
-                title: 'Minccino',
-                image: '/img/pokemon/minccino.png',
-            },
-            {
-                id: 9,
-                title: 'Moltres',
-                image: '/img/pokemon/moltres.png',
-            },            
-            {
-                id: 10,
-                title: 'Mudkip',
-                image: '/img/pokemon/Mudkip.png',
-            },            
-            {
-                id: 11,
-                title: 'Octillery',
-                image: '/img/pokemon/octillery.png',
-            },            
-            {
-                id: 12,
-                title: 'Pachirisu',
-                image: '/img/pokemon/pachirisu.png'
-            },            
-            {
-                id: 13,
-                title: 'Pikachu',
-                image: '/img/pokemon/pikachu.png',
-            },
-            {
-                id: 14,
-                title: 'Popplio',
-                image: '/img/pokemon/popplio.png',
-            },            
-            {
-                id: 15,
-                title: 'Raticate',
-                image: '/img/pokemon/raticate.png',
-            },            
-            {
-                id: 16,
-                title: 'Rowlet',
-                image: '/img/pokemon/rowlet.png',
-            },
-            {
-                id: 17,
-                title: 'Sandshrew',
-                image: '/img/pokemon/Sandshrew.png',
-            },
-            {
-                id: 18,
-                title: 'Shinx',
-                image: '/img/pokemon/shinx.png',
-            },
-            {
-                id: 19,
-                title: 'Squirtle',
-                image: '/img/pokemon/squirtle.png',
-            },
-            {
-                id: 20,
-                title: 'Zapdos',
-                image: '/img/pokemon/zapdos.png',
-            },
-/*             {
-                id: 21,
-                title: 'Pokeball',
-                image: '/img/pokemon/pokeball.jpg',
-            }, */
-            ]
+const iconos = [
+  '/img/pokemon/articuno.png',
+  '/img/pokemon/bulbasaur.png',
+  '/img/pokemon/dragonite.png',
+  '/img/pokemon/eevee.png',
+  '/img/pokemon/krokorok.png',
+  '/img/pokemon/lapras.png',
+  '/img/pokemon/marill.png',
+  '/img/pokemon/minccino.png',
+  '/img/pokemon/moltres.png',
+  '/img/pokemon/Mudkip.png',
+  '/img/pokemon/octillery.png',
+  '/img/pokemon/pachirisu.png',
+  '/img/pokemon/pikachu.png',
+  '/img/pokemon/popplio.png',
+  '/img/pokemon/raticate.png',
+  '/img/pokemon/rowlet.png',
+  '/img/pokemon/Sandshrew.png',
+  '/img/pokemon/shinx.png',
+  '/img/pokemon/squirtle.png',
+  '/img/pokemon/zapdos.png',
+];
+
+let selecciones = [];
+
+// Crea una propiedad reactiva para almacenar las cartas
+const cartas = ref([]);
+
+function nuevaPartida() {
+    cartas.value = generarCartas(); // Actualiza el valor de la propiedad reactiva cartas
+}
+
+function generarCartas() {
+    const seleccionados = [];
+    const cartasGeneradas = [];
+
+    // Elegir aleatoriamente 8 iconos únicos
+    const iconosSeleccionados = [];
+    while (iconosSeleccionados.length < 8) {
+        const indiceAleatorio = Math.floor(Math.random() * iconos.length);
+        const icono = iconos[indiceAleatorio];
+        if (!iconosSeleccionados.includes(icono)) {
+            iconosSeleccionados.push(icono);
         }
-  },
-props: {
-    columns: {
-    type: Number,
-    default: 4
     }
-  },
-computed: {
-    elements() {
-        return this.columns**2/2;
-    }
-  },
-   methods: {
-    
-  }
 
+    // Duplicar cada icono seleccionado para tener dos de cada uno
+    const iconosDuplicados = [...iconosSeleccionados, ...iconosSeleccionados];
+
+    // Asignar cada icono duplicado a una carta
+    for (let i = 0; i < iconosDuplicados.length; i++) {
+        const carta = {
+            id: i,
+            title: `Pokemon ${i + 1}`,
+            image: iconosDuplicados[i],
+        };
+        cartasGeneradas.push(carta);
+    }
+
+    // Mezclar aleatoriamente el orden de las cartas generadas
+    cartasGeneradas.sort(() => Math.random() - 0.5);
+
+    return cartasGeneradas;
+}
+
+function seleccionarTarjeta(index) {
+    // Lógica para voltear la carta seleccionada
 }
 </script>
 
@@ -165,10 +98,10 @@ computed: {
 img {
     width: 100%;
     border-radius: 0.5rem;
-    opacity: 0;
 }
 .carta {
     width: 10rem;
+    position: relative;
     border-radius: 0.5rem;
     cursor: pointer;
 }
@@ -179,12 +112,33 @@ img {
 }
 .memory-game {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .extras {
     display: flex;
     justify-content: center;
 }
+.cara {
+    width: 10rem;
+    height: 15rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
+button {
+    margin: 0.5rem;
+    font-size: xx-large;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+    background-color: rgb(114, 114, 253);
+    transition: 200ms ease;
+}
+button:hover{
+    color: white;
+    box-shadow: 0rem 0rem 1rem 0.2rem rgb(146, 146, 255);
+}
 </style>

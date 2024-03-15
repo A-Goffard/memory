@@ -25,6 +25,7 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   text-align: center;
   text-decoration: none;
+  box-sizing: border-box;
 }
 h1{
   color: blue;
