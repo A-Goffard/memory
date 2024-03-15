@@ -1,19 +1,12 @@
 <template>
     <div class="carta">
-        <h2>{{ carta.title }}</h2>
-        <img :src="carta.image" alt="Pokemons">
+        <img src="/img/pokemon/pokeball.jpg" alt="Pokemons">
     </div>
 </template>
 
 <script setup>
-import { defineProps } from 'vue';
 
-const { props } = defineProps({
-  carta: {
-    type: Object,
-    required: true
-  }
-});
+
 </script>
 
 <style scoped>
@@ -29,15 +22,6 @@ const { props } = defineProps({
 .carta:hover{
   box-shadow: 0rem 0rem 1rem 0.3rem blue;
   border: solid 0.15rem blue;
-}
-
-h2 {
-  color: blue;
-  margin: 0.5rem;
-  font-size: x-large;
-}
-p{
-  font-size: large;
 }
 
 img {

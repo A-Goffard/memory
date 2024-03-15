@@ -9,10 +9,9 @@
         <div class="memory-game">
             <div class="board">
                 <div class="carta" v-for="carta in cartas" :key="carta.id">
-                    <CartasPokemon class="cara trasera" :carta="carta" />
-
+                    <CartasPokemon class="cara superior" :carta="carta" />
+                    <CartaTrasera/>
                 </div>
-
             </div>
         </div>
     </div>
@@ -23,6 +22,7 @@ import Puntuacion from '/src/components/Puntuancion.vue';
 import Vidas from '/src/components/Vidas.vue';
 import Intentos from '/src/components/Intentos.vue';
 import CartasPokemon from '/src/components/CartasPokemon.vue';
+import CartaTrasera from '/src/components/CartaTrasera.vue';
 
 export default {
     components: {
@@ -30,6 +30,7 @@ export default {
         Vidas,
         Intentos,
         CartasPokemon,
+        CartaTrasera,
     },
     data() {
         return {
