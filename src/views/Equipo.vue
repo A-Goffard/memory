@@ -23,23 +23,23 @@ export default {
                 {
                     id: 1,
                     nombre: 'Jesús Romero',
-                    puesto: 'Srum Master',
+                    puesto: 'Scrum Master',
                     trabajo: 'Developer',
-                    imagen: '/public/img/jesus.jpeg',
+                    imagen: 'img/jesus.jpeg',
                 },
                 {
                     id: 2,
                     nombre: 'Jonathan Dominguez',
                     puesto: 'Coordinator',
                     trabajo: 'Developer',
-                    imagen: '/public/img/Jonny.jpeg',
+                    imagen: 'img/Jonny.jpeg',
                 },
                 {
                     id: 3,
                     nombre: 'Aintzane Goffard',
                     puesto: 'Product Owner',
                     trabajo: 'Developer',
-                    imagen: '/public/img/Aintzane.jpeg',
+                    imagen: 'img/Aintzane.jpeg',
                 },
             ]
         }
@@ -48,7 +48,7 @@ export default {
 </script>
 
 <style scoped>
-.contenedor-general {
+.contenedor-cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
