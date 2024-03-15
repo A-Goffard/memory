@@ -1,5 +1,5 @@
 <template>
-    <div class="carta">
+    <div class="carta" @click="handleClick">
         <h2>{{ carta.name }}</h2>
         <img :src="carta.image" alt="Pokemons">
     </div>

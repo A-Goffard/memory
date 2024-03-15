@@ -25,27 +25,28 @@ import Intentos from '/src/components/Intentos.vue';
 import CartasPokemon from '/src/components/CartasPokemon.vue';
 
 const pokemons = [
-    { name: 'Articuno', image: '/img/pokemon/articuno.png' },
-    { name: 'Bulbasaur', image: '/img/pokemon/bulbasaur.png' },
-    { name: 'Dragonite', image: '/img/pokemon/dragonite.png' },
-    { name: 'Eevee', image: '/img/pokemon/eevee.png' },
-    { name: 'Krokorok', image: '/img/pokemon/krokorok.png' },
-    { name: 'Lapras', image: '/img/pokemon/lapras.png' },
-    { name: 'Marill', image: '/img/pokemon/marill.png' },
-    { name: 'Minccino', image: '/img/pokemon/minccino.png' },
-    { name: 'Moltres', image: '/img/pokemon/moltres.png' },
-    { name: 'Mudkip', image: '/img/pokemon/Mudkip.png' },
-    { name: 'Octillery', image: '/img/pokemon/octillery.png' },
-    { name: 'Pachirisu', image: '/img/pokemon/pachirisu.png' },
-    { name: 'Pikachu', image: '/img/pokemon/pikachu.png' },
-    { name: 'Popplio', image: '/img/pokemon/popplio.png' },
-    { name: 'Raticate', image: '/img/pokemon/raticate.png' },
-    { name: 'Rowlet', image: '/img/pokemon/rowlet.png' },
-    { name: 'Sandshrew', image: '/img/pokemon/Sandshrew.png' },
-    { name: 'Shinx', image: '/img/pokemon/shinx.png' },
-    { name: 'Squirtle', image: '/img/pokemon/squirtle.png' },
-    { name: 'Zapdos', image: '/img/pokemon/zapdos.png' },
+    { name: 'Articuno', image: '/img/pokemon/articuno.png', trasera: '/img/pokemon/pokeball.png' },
+    { name: 'Bulbasaur', image: '/img/pokemon/bulbasaur.png', trasera: '/img/pokemon/pokeball.png' },
+    { name: 'Dragonite', image: '/img/pokemon/dragonite.png', trasera: '/img/pokemon/pokeball.png' },
+    { name: 'Eevee', image: '/img/pokemon/eevee.png', trasera: '/img/pokemon/pokeball.png' },
+    { name: 'Krokorok', image: '/img/pokemon/krokorok.png', trasera: '/img/pokemon/pokeball.png' },
+    { name: 'Lapras', image: '/img/pokemon/lapras.png', trasera: '/img/pokemon/pokeball.png' },
+    { name: 'Marill', image: '/img/pokemon/marill.png', trasera: '/img/pokemon/pokeball.png' },
+    { name: 'Minccino', image: '/img/pokemon/minccino.png', trasera: '/img/pokemon/pokeball.png' },
+    { name: 'Moltres', image: '/img/pokemon/moltres.png', trasera: '/img/pokemon/pokeball.png' },
+    { name: 'Mudkip', image: '/img/pokemon/Mudkip.png', trasera: '/img/pokemon/pokeball.png' },
+    { name: 'Octillery', image: '/img/pokemon/octillery.png', trasera: '/img/pokemon/pokeball.png' },
+    { name: 'Pachirisu', image: '/img/pokemon/pachirisu.png', trasera: '/img/pokemon/pokeball.png' },
+    { name: 'Pikachu', image: '/img/pokemon/pikachu.png', trasera: '/img/pokemon/pokeball.png' },
+    { name: 'Popplio', image: '/img/pokemon/popplio.png', trasera: '/img/pokemon/pokeball.png' },
+    { name: 'Raticate', image: '/img/pokemon/raticate.png', trasera: '/img/pokemon/pokeball.png' },
+    { name: 'Rowlet', image: '/img/pokemon/rowlet.png', trasera: '/img/pokemon/pokeball.png' },
+    { name: 'Sandshrew', image: '/img/pokemon/Sandshrew.png', trasera: '/img/pokemon/pokeball.png' },
+    { name: 'Shinx', image: '/img/pokemon/shinx.png', trasera: '/img/pokemon/pokeball.png' },
+    { name: 'Squirtle', image: '/img/pokemon/squirtle.png', trasera: '/img/pokemon/pokeball.png' },
+    { name: 'Zapdos', image: '/img/pokemon/zapdos.png', trasera: '/img/pokemon/pokeball.png' },
 ];
+
 let selecciones = [];
 
 // Crea una propiedad reactiva para almacenar las cartas
@@ -78,6 +79,7 @@ function generarCartas() {
             id: i,
             name: pokemonsDuplicados[i].name,
             image: pokemonsDuplicados[i].image,
+            
         };
         cartasGeneradas.push(carta);
     }
@@ -89,7 +91,8 @@ function generarCartas() {
 }
 
 function seleccionarTarjeta(index) {
-    // Lógica para voltear la carta seleccionada
+    // Cambiar la propiedad volteada de la carta seleccionada
+
 }
 </script>
 
@@ -103,6 +106,7 @@ img {
     position: relative;
     border-radius: 0.5rem;
     cursor: pointer;
+/*     background-image: url(/public/img/pokemon/pokeball.jpg); */
 }
 .board {
     display: grid;
