@@ -1,6 +1,6 @@
 <template>
     <div class="carta">
-        <h2>{{ carta.title }}</h2>
+        <h2>{{ carta.name }}</h2>
         <img :src="carta.image" alt="Pokemons">
     </div>
 </template>

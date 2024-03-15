@@ -24,29 +24,28 @@ import Vidas from '/src/components/Vidas.vue';
 import Intentos from '/src/components/Intentos.vue';
 import CartasPokemon from '/src/components/CartasPokemon.vue';
 
-const iconos = [
-  '/img/pokemon/articuno.png',
-  '/img/pokemon/bulbasaur.png',
-  '/img/pokemon/dragonite.png',
-  '/img/pokemon/eevee.png',
-  '/img/pokemon/krokorok.png',
-  '/img/pokemon/lapras.png',
-  '/img/pokemon/marill.png',
-  '/img/pokemon/minccino.png',
-  '/img/pokemon/moltres.png',
-  '/img/pokemon/Mudkip.png',
-  '/img/pokemon/octillery.png',
-  '/img/pokemon/pachirisu.png',
-  '/img/pokemon/pikachu.png',
-  '/img/pokemon/popplio.png',
-  '/img/pokemon/raticate.png',
-  '/img/pokemon/rowlet.png',
-  '/img/pokemon/Sandshrew.png',
-  '/img/pokemon/shinx.png',
-  '/img/pokemon/squirtle.png',
-  '/img/pokemon/zapdos.png',
+const pokemons = [
+    { name: 'Articuno', image: '/img/pokemon/articuno.png' },
+    { name: 'Bulbasaur', image: '/img/pokemon/bulbasaur.png' },
+    { name: 'Dragonite', image: '/img/pokemon/dragonite.png' },
+    { name: 'Eevee', image: '/img/pokemon/eevee.png' },
+    { name: 'Krokorok', image: '/img/pokemon/krokorok.png' },
+    { name: 'Lapras', image: '/img/pokemon/lapras.png' },
+    { name: 'Marill', image: '/img/pokemon/marill.png' },
+    { name: 'Minccino', image: '/img/pokemon/minccino.png' },
+    { name: 'Moltres', image: '/img/pokemon/moltres.png' },
+    { name: 'Mudkip', image: '/img/pokemon/Mudkip.png' },
+    { name: 'Octillery', image: '/img/pokemon/octillery.png' },
+    { name: 'Pachirisu', image: '/img/pokemon/pachirisu.png' },
+    { name: 'Pikachu', image: '/img/pokemon/pikachu.png' },
+    { name: 'Popplio', image: '/img/pokemon/popplio.png' },
+    { name: 'Raticate', image: '/img/pokemon/raticate.png' },
+    { name: 'Rowlet', image: '/img/pokemon/rowlet.png' },
+    { name: 'Sandshrew', image: '/img/pokemon/Sandshrew.png' },
+    { name: 'Shinx', image: '/img/pokemon/shinx.png' },
+    { name: 'Squirtle', image: '/img/pokemon/squirtle.png' },
+    { name: 'Zapdos', image: '/img/pokemon/zapdos.png' },
 ];
-
 let selecciones = [];
 
 // Crea una propiedad reactiva para almacenar las cartas
@@ -60,25 +59,25 @@ function generarCartas() {
     const seleccionados = [];
     const cartasGeneradas = [];
 
-    // Elegir aleatoriamente 8 iconos únicos
-    const iconosSeleccionados = [];
-    while (iconosSeleccionados.length < 8) {
-        const indiceAleatorio = Math.floor(Math.random() * iconos.length);
-        const icono = iconos[indiceAleatorio];
-        if (!iconosSeleccionados.includes(icono)) {
-            iconosSeleccionados.push(icono);
+    // Elegir aleatoriamente 8 Pokémon únicos
+    const pokemonsSeleccionados = [];
+    while (pokemonsSeleccionados.length < 8) {
+        const indiceAleatorio = Math.floor(Math.random() * pokemons.length);
+        const pokemon = pokemons[indiceAleatorio];
+        if (!pokemonsSeleccionados.includes(pokemon)) {
+            pokemonsSeleccionados.push(pokemon);
         }
     }
 
-    // Duplicar cada icono seleccionado para tener dos de cada uno
-    const iconosDuplicados = [...iconosSeleccionados, ...iconosSeleccionados];
+    // Duplicar cada Pokémon seleccionado para tener dos de cada uno
+    const pokemonsDuplicados = [...pokemonsSeleccionados, ...pokemonsSeleccionados];
 
-    // Asignar cada icono duplicado a una carta
-    for (let i = 0; i < iconosDuplicados.length; i++) {
+    // Asignar cada Pokémon duplicado a una carta
+    for (let i = 0; i < pokemonsDuplicados.length; i++) {
         const carta = {
             id: i,
-            title: `Pokemon ${i + 1}`,
-            image: iconosDuplicados[i],
+            name: pokemonsDuplicados[i].name,
+            image: pokemonsDuplicados[i].image,
         };
         cartasGeneradas.push(carta);
     }
