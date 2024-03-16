@@ -17,9 +17,9 @@
 </template>
 
 <script setup>
-import Puntuacion from '/src/components/Puntuancion.vue';
-import Vidas from '/src/components/Vidas.vue';
-import Intentos from '/src/components/Intentos.vue';
+import Puntuacion from '/src/components/juegos/Puntuancion.vue';
+import Vidas from '/src/components/juegos/Vidas.vue';
+import Intentos from '/src/components/juegos/Intentos.vue';
 
 import {Ref} from "vue";
 

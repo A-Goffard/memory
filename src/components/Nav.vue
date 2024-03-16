@@ -3,6 +3,7 @@
         <router-link to="/" class="boton">Inicio</router-link>
         <router-link to="/equipo" class="boton">Equipo</router-link>
         <router-link to="/juegos" class="boton">Juegos</router-link>
+        <router-link to="/aplicaciones" class="boton">Aplicaciones</router-link>
         <router-link to="/contacto" class="boton">Contacto</router-link>
     </div>  
 </template>
