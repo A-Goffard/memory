@@ -30,18 +30,14 @@
   import Vidas from '/src/components/Vidas.vue';
   import Intentos from '/src/components/Intentos.vue';
 
-
-const pokemons = [
+  const pokemons = [
   { name: 'Bulbasaur', image: '/img/pokemon/bulbasaur.png', trasera: "/img/pokemon/shinx.jpg" },
   { name: 'Dragonite', image: '/img/pokemon/dragonite.png', trasera: "/img/pokemon/shinx.jpg" },
   { name: 'Eevee', image: '/img/pokemon/eevee.png', trasera: "/img/pokemon/shinx.jpg" },
   { name: 'Krokorok', image: '/img/pokemon/krokorok.png', trasera: "/img/pokemon/shinx.jpg" },
-  { name: 'Lapras', image: '/img/pokemon/lapras.png', trasera: "/img/pokemon/shinx.jpg" },
   { name: 'Pikachu', image: '/img/pokemon/pikachu.png', trasera: "/img/pokemon/shinx.jpg" },
-  { name: 'Popplio', image: '/img/pokemon/popplio.png', trasera: "/img/pokemon/shinx.jpg" },
   { name: 'Squirtle', image: '/img/pokemon/squirtle.png', trasera: "/img/pokemon/shinx.jpg" },
 ];
-
 const cartas = ref([]);
 const cartasSeleccionadas = ref([]);
 
@@ -88,23 +84,15 @@ img {
     width: 95%;
     border-radius: 0.5rem;
 }
-
 .carta {
     width: 10rem;
     position: relative;
     border-radius: 0.5rem;
     cursor: pointer;
 }
-
-/* .back {
-    background-image: url(/public/img/pokemon/shinx.jpg);
-    background-size: cover;
-    background-position: center;
-    opacity: 1;
-} */
 .board {
     display: grid;
-    grid-template-columns: 10rem 10rem 10rem 10rem;
+    grid-template-columns: 10rem 10rem 10rem 10rem 10rem 10rem;
     gap: 2rem;
     
 }
@@ -115,7 +103,6 @@ img {
     align-items: center;
 
 }
-
 .extras {
     display: flex;
     justify-content: center;
@@ -136,10 +123,6 @@ img {
 .cara:hover {
     box-shadow: 0rem 0rem 1rem 0.2rem rgb(146, 146, 255);
 }
-/* .oculta {
-
-    visibility: hidden;
-} */
 button {
     margin: 2rem;
     font-size: xx-large;

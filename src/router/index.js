@@ -5,7 +5,7 @@ import Juegos from '../views/Juegos.vue';
 import Contacto from '../views/Contacto.vue';
 import MemoryGame from '../views/juegos/MemoryGame.vue';
 import TicTacToe from '../views/juegos/TicTacToe.vue';
-import MemoryGamePokemon from '../views/juegos/MemoryGamePokemon.vue';
+
 
 const routes = [
     {
@@ -38,11 +38,7 @@ const routes = [
         name: 'TicTacToe',
         component: TicTacToe,
     },
-    {
-        path: '/memorygamepokemon',
-        name: 'MemoryGamePokemon',
-        component: MemoryGamePokemon,
-    },
+
 ];
 
 const router = createRouter({

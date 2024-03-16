@@ -54,7 +54,7 @@ export default {
   }
 
   img {
-    width: 25rem;
+    width: 20rem;
     margin: 0.5rem;
     border-radius: 0.5rem;
   }
