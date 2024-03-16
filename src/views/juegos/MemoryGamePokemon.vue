@@ -8,9 +8,10 @@
         </div>
         <div class="memory-game">
             <div class="board">
-                <div class="carta" v-for="(carta, index) in cartas" :key="index" @click="seleccionarTarjeta(index)">
-                    <CartasPokemon class="cara superior" :carta="carta" />
+                <div class="carta"  v-for="(carta, index) in cartas" :key="index" @click="seleccionarTarjeta(index)">
+                    <CartasPokemon @clic="manejarClicEnCarta"  class="cara superior" :carta="carta"/>
                 </div>
+
             </div>
             <button @click="nuevaPartida">Nueva Partida</button>
         </div>
@@ -52,6 +53,11 @@ let selecciones = [];
 // Crea una propiedad reactiva para almacenar las cartas
 const cartas = ref([]);
 
+function manejarClicEnCarta() {
+    alert("kk")
+
+  // Aquí manejas la lógica para mostrar u ocultar la información de la carta según el índice recibido
+};
 function nuevaPartida() {
     cartas.value = generarCartas(); // Actualiza el valor de la propiedad reactiva cartas
 }
@@ -90,10 +96,11 @@ function generarCartas() {
     return cartasGeneradas;
 }
 
-function seleccionarTarjeta(index) {
-    // Cambiar la propiedad volteada de la carta seleccionada
 
-}
+
+function seleccionarTarjeta(index) {}
+
+
 </script>
 
 <style scoped>
@@ -101,23 +108,32 @@ img {
     width: 100%;
     border-radius: 0.5rem;
 }
+
 .carta {
     width: 10rem;
     position: relative;
     border-radius: 0.5rem;
     cursor: pointer;
-/*     background-image: url(/public/img/pokemon/pokeball.jpg); */
 }
+
+/* .back {
+    background-image: url(/public/img/pokemon/pokeball.jpg);
+    background-size: cover;
+    background-position: center;
+    opacity: 1;
+} */
 .board {
     display: grid;
-    grid-template-columns: 15rem 15rem 15rem 15rem;
-    gap: 0.5rem;
+    grid-template-columns: 10rem 10rem 10rem 10rem;
+    gap: 2rem;
+    
 }
 .memory-game {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
 }
 
 .extras {
@@ -131,9 +147,12 @@ img {
     flex-wrap: wrap;
     justify-content: center;
 }
+.oculta {
 
+    visibility: hidden;
+}
 button {
-    margin: 0.5rem;
+    margin: 2rem;
     font-size: xx-large;
     padding: 0.5rem 1rem;
     border-radius: 0.3rem;
