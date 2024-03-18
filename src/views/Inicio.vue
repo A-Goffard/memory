@@ -8,11 +8,13 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      images: [
+<script setup>
+//composition
+
+import { ref, computed } from 'vue';
+
+// Convertimos images y currentIndex en referencias reactivas
+   const images = ref([
         '/img/presentacion/1.png',
         '/img/presentacion/2.png',
         '/img/presentacion/3.png',
@@ -63,30 +65,33 @@ export default {
         '/img/presentacion/48.png',
         '/img/presentacion/49.png',
         '/img/presentacion/50.png',
-        // Agrega aquí más rutas de imágenes según sea necesario
-      ],
-      currentIndex: 0
-    };
-  },
-  computed: {
-    currentImage() {
-      return this.images[this.currentIndex];
-    }
-  },
-  methods: {
-    nextImage() {
-      if (this.currentIndex < this.images.length - 1) {
-        this.currentIndex++;
-      }
-    },
-    previousImage() {
-      if (this.currentIndex > 0) {
-        this.currentIndex--;
-      }
-    }
+        // Agregar aquí más rutas de imágenes según sea necesario
+      ]);
+      const currentIndex = ref(0);
+
+      // Creamos la función nextImage
+const nextImage = () => {
+  if (currentIndex.value < images.value.length - 1) {
+    currentIndex.value++;
   }
 };
+
+// Creamos la función previousImage
+const previousImage = () => {
+  if (currentIndex.value > 0) {
+    currentIndex.value--;
+  }
+};
+
+// Creamos una función computed para obtener la imagen actual
+const currentImage = computed(() => {
+  return images.value[currentIndex.value];
+});
+    
+  
 </script>
+
+
 
 <style scoped>
 img{
