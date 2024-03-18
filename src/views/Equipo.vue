@@ -10,16 +10,16 @@
     
 </template>
 
-<script>
+<script setup>
+//composition
+import { ref} from 'vue';
+
+
 import FitxasEquipo from '../components/FitxasEquipo.vue';
 
-export default {
-    components: {
-        FitxasEquipo
-    },
-    data() {
-        return {
-            fitxas: [
+
+
+             const fitxas= ref([
                 {
                     id: 1,
                     nombre: 'Jesús Romero',
@@ -41,10 +41,9 @@ export default {
                     trabajo: 'Developer',
                     imagen: 'img/Aintzane.jpeg',
                 },
-            ]
-        }
-    }
-}
+            ]);
+        
+    
 </script>
 
 <style scoped>
