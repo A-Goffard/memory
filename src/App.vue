@@ -1,8 +1,8 @@
 <template>
-  <dir>
+  <div>
     <Nav/>
     <router-view></router-view>
-  </dir>
+  </div>
 </template>
 
 <script>
