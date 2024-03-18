@@ -7,7 +7,7 @@
   </div>
 </template>
 
-<!-- <script setup>
+<script setup>
   import { defineProps } from 'vue';
 
   const props = defineProps({
@@ -16,9 +16,9 @@
       required: true
     }
   });
-</script> -->
+</script>
 
-<script>
+<!-- <script>
 export default {
   props: {
     fitxa: {
@@ -27,7 +27,7 @@ export default {
     }
   }
 }
-</script>
+</script> -->
 
 <style scoped>
 .fitxas-card{

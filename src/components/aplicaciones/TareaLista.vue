@@ -13,7 +13,7 @@
 </div>
   </template>
   
-  <script>
+<!--   <script>
   export default {
     props: ['tareas'],
     methods: {
@@ -21,6 +21,16 @@
         this.$emit('eliminarTarea', id);
       }
     }
+  };
+  </script> -->
+  <script setup>
+  import { defineProps, defineEmits } from 'vue';
+  
+  const props = defineProps(['tareas']);
+  const emit = defineEmits();
+  
+  const eliminarTarea = (id) => {
+    emit('eliminarTarea', id);
   };
   </script>
   

@@ -11,7 +11,7 @@
   </div>
 </template>
 
-<script>
+<!-- <script>
 export default {
   props: {
     fitxa: {
@@ -28,6 +28,18 @@ export default {
     }
   }
 }
+</script> -->
+
+<script setup>
+const { fitxa } = props;
+
+const irALinkedIn = () => {
+  window.open(fitxa.value.linkedin, '_blank');
+};
+
+const irAGitHub = () => {
+  window.open(fitxa.value.github, '_blank');
+};
 </script>
 
 <style scoped>

@@ -14,10 +14,7 @@
 //composition
 import { ref} from 'vue';
 
-
 import FitxasEquipo from '../components/FitxasEquipo.vue';
-
-
 
              const fitxas= ref([
                 {

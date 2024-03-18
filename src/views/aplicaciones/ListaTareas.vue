@@ -6,49 +6,43 @@
   </div>
 </template>
 
-<script>
+<script setup>
+import { ref, onMounted } from 'vue';
 import NuevoTarea from '/src/components/aplicaciones/NuevaTarea.vue';
 import TareaLista from '/src/components/aplicaciones/TareaLista.vue';
 
-export default {
-  components: {
-    NuevoTarea,
-    TareaLista
-  },
-  data() {
-    return {
-      tareas: []
-    };
-  },
-  created() {
-    // Cargar tareas desde el localStorage cuando se carga el componente
-    const storedTareas = localStorage.getItem('tareas');
-    if (storedTareas) {
-      this.tareas = JSON.parse(storedTareas);
-    }
-  },
-  methods: {
-    agregarTarea(descripcion) {
-      if (!descripcion.trim()) {
-        alert('Por favor, escriba algo antes de agregar una tarea.');
-        return; // No agregar tarea si la descripción está vacía
-      }
-      const nuevaTarea = {
-        id: this.tareas.length + 1,
-        descripcion
-      };
-      this.tareas.push(nuevaTarea);
-      this.guardarTareasEnLocalStorage();
-    },
-    eliminarTarea(id) {
-      this.tareas = this.tareas.filter(tarea => tarea.id !== id);
-      this.guardarTareasEnLocalStorage();
-    },
-    guardarTareasEnLocalStorage() {
-      localStorage.setItem('tareas', JSON.stringify(this.tareas));
-    }
+const tareas = ref([]);
+
+const cargarTareasDesdeLocalStorage = () => {
+  const storedTareas = localStorage.getItem('tareas');
+  if (storedTareas) {
+    tareas.value = JSON.parse(storedTareas);
   }
 };
+
+const agregarTarea = (descripcion) => {
+  if (!descripcion.trim()) {
+    alert('Por favor, escriba algo antes de agregar una tarea.');
+    return; // No agregar tarea si la descripción está vacía
+  }
+  const nuevaTarea = {
+    id: tareas.value.length + 1,
+    descripcion
+  };
+  tareas.value.push(nuevaTarea);
+  guardarTareasEnLocalStorage();
+};
+
+const eliminarTarea = (id) => {
+  tareas.value = tareas.value.filter(tarea => tarea.id !== id);
+  guardarTareasEnLocalStorage();
+};
+
+const guardarTareasEnLocalStorage = () => {
+  localStorage.setItem('tareas', JSON.stringify(tareas.value));
+};
+
+onMounted(cargarTareasDesdeLocalStorage);
 </script>
 
 <style scoped>

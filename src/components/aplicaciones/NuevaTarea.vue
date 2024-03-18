@@ -5,19 +5,19 @@
     </div>
   </template>
   
-  <script>
-  export default {
-    data() {
-      return {
-        descripcion: ''
-      };
-    },
-    methods: {
-      agregarTarea() {
-        this.$emit('nuevaTarea', this.descripcion);
-        this.descripcion = '';
-      }
+  <script setup>
+  import { ref, defineEmits } from 'vue';
+  
+  const descripcion = ref('');
+  const emit = defineEmits();
+  
+  const agregarTarea = () => {
+    if (!descripcion.value.trim()) {
+      alert('Por favor, escriba algo antes de agregar una tarea.');
+      return; // No agregar tarea si la descripción está vacía
     }
+    emit('nuevaTarea', descripcion.value);
+    descripcion.value = '';
   };
   </script>
 
