@@ -5,17 +5,9 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import Inicio from './views/Inicio.vue';
 import Nav from './components/Nav.vue';
-
-export default {
-  name: 'App',
-  components: {
-    Nav,
-    Inicio
-  }
-};
 </script>
 
 <style>

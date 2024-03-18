@@ -31,14 +31,27 @@ export default {
 </script> -->
 
 <script setup>
-const { fitxa } = props;
+import { defineProps, defineEmits } from 'vue';
+
+const props = defineProps({
+  fitxa: {
+    type: Object,
+    required: true
+  }
+});
+
+const emit = defineEmits();
 
 const irALinkedIn = () => {
-  window.open(fitxa.value.linkedin, '_blank');
+  if (props.fitxa.linkedin) {
+    window.open(props.fitxa.linkedin, '_blank');
+  }
 };
 
 const irAGitHub = () => {
-  window.open(fitxa.value.github, '_blank');
+  if (props.fitxa.github) {
+    window.open(props.fitxa.github, '_blank');
+  }
 };
 </script>
 
