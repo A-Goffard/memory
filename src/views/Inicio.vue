@@ -52,42 +52,17 @@ export default {
         '/img/presentacion/37.png',
         '/img/presentacion/38.png',
         '/img/presentacion/39.png',
-        '/img/presentacion/.png',
-        '/img/presentacion/.png',
-        '/img/presentacion/.png',
-        '/img/presentacion/.png',
-        '/img/presentacion/.png',
-        '/img/presentacion/.png',
-        '/img/presentacion/.png',
-        '/img/presentacion/.png',
-        '/img/presentacion/.png',
-        '/img/presentacion/.png',
-        '/img/presentacion/.png',
-        '/img/presentacion/.png',
-        '/img/presentacion/.png',
-        '/img/presentacion/.png',
-        '/img/presentacion/.png',
-        '/img/presentacion/.png',
-        '/img/presentacion/.png',
-        '/img/presentacion/.png',
-        '/img/presentacion/.png',
-        '/img/presentacion/.png',
-        '/img/presentacion/.png',
-        '/img/presentacion/.png',
-        '/img/presentacion/.png',
-        '/img/presentacion/.png',
-        '/img/presentacion/.png',
-        '/img/presentacion/.png',
-        '/img/presentacion/.png',
-        '/img/presentacion/.png',
-        '/img/presentacion/.png',
-        '/img/presentacion/.png',
-        '/img/presentacion/.png',
-        '/img/presentacion/.png',
-        '/img/presentacion/.png',
-        '/img/presentacion/.png',
-        '/img/presentacion/.png',
-
+        '/img/presentacion/40.png',
+        '/img/presentacion/41.png',
+        '/img/presentacion/42.png',
+        '/img/presentacion/43.png',
+        '/img/presentacion/44.png',
+        '/img/presentacion/45.png',
+        '/img/presentacion/46.png',
+        '/img/presentacion/47.png',
+        '/img/presentacion/48.png',
+        '/img/presentacion/49.png',
+        '/img/presentacion/50.png',
         // Agrega aquí más rutas de imágenes según sea necesario
       ],
       currentIndex: 0
@@ -114,5 +89,20 @@ export default {
 </script>
 
 <style scoped>
+img{
+  width: 83%;
+}
 
+button {
+  margin: 0.2rem;
+  font-size: large;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.3rem;
+  background-color: rgb(114, 114, 253);
+  transition: 200ms ease;
+}
+button:hover{
+  color: white;
+  box-shadow: 0rem 0rem 1rem 0.2rem rgb(146, 146, 255);
+}
 </style>
